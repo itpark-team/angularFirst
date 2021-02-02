@@ -1,20 +1,23 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
 import {Routes, RouterModule} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
-import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { PizzaListComponent } from './pizza-list/pizza-list.component';
-import { GirlsListComponent } from './girls-list/girls-list.component';
-import { HomeComponent } from './home/home.component';
+import {AppComponent} from './app.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {PizzaListComponent} from './pizza-list/pizza-list.component';
+import {GirlsListComponent} from './girls-list/girls-list.component';
+import {HomeComponent} from './home/home.component';
 
 import {SomeDataService} from './services/some.service';
+import {SlutsComponent} from './sluts/sluts.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent},
-  { path: 'girls', component: GirlsListComponent},
-  { path: 'pizza', component: PizzaListComponent }
+  {path: '', component: HomeComponent},
+  {path: 'girls', component: GirlsListComponent},
+  {path: 'pizza', component: PizzaListComponent},
+  {path: 'sluts', component: SlutsComponent}
 ];
 
 @NgModule({
@@ -22,12 +25,14 @@ const appRoutes: Routes = [
     AppComponent,
     PizzaListComponent,
     GirlsListComponent,
-    HomeComponent
+    HomeComponent,
+    SlutsComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
-    RouterModule.forRoot(appRoutes)
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [
     SomeDataService
@@ -36,4 +41,5 @@ const appRoutes: Routes = [
     AppComponent
   ]
 })
-export class AppModule { }
+export class AppModule {
+}

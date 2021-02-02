@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SomeDataService} from '../services/some.service';
 
 @Component({
@@ -8,12 +8,17 @@ import {SomeDataService} from '../services/some.service';
 })
 export class PizzaListComponent implements OnInit {
 
+  isDone: boolean = true;
+
   constructor(private someSrv: SomeDataService) {
-    //someSrv.data = 324;
-    console.log(someSrv.data);
+
   }
 
   ngOnInit(): void {
+  }
+
+  toggle(): void {
+    this.isDone = !this.isDone;
   }
 
 }

@@ -1,1 +1,3 @@
-<p>girls-list works!{{girlsValue}}</p>
+<ul>
+  <li *ngFor="let girl of girls; let i = index">{{i}} || {{girl.id}} | {{girl.name}} | {{girl.age}}</li>
+</ul>

@@ -1,5 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SomeDataService} from '../services/some.service';
+
+interface Girl {
+  id: number;
+  name: string;
+  age: number;
+}
 
 @Component({
   selector: 'app-girls-list',
@@ -8,12 +14,12 @@ import {SomeDataService} from '../services/some.service';
 })
 export class GirlsListComponent implements OnInit {
 
-  public girlsValue:number;
+  girls: Girl[] = [];
 
   constructor(private someSrv: SomeDataService) {
-    someSrv.data = 123;
-    console.log(someSrv.data);
-    this.girlsValue = someSrv.data;
+    this.girls.push({id: 1, name: 'Alibaba', age : 19});
+    this.girls.push({id: 3, name: 'Katya', age : 21});
+    this.girls.push({id: 4, name: 'Igor', age : 24});
   }
 
   ngOnInit(): void {

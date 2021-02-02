@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 
 interface KeyValuePair {
-  key:string;
-  value:any;
+  key: string;
+  value: any;
 }
 
 @Injectable({ providedIn: 'root' })

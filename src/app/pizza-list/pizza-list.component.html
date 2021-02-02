@@ -1,1 +1,7 @@
-<p>pizza-list works!</p>
+<p *ngIf="isDone; then doneBlock else notDoneBlock"></p>
+
+<ng-template #doneBlock>pizza-list done!</ng-template>
+<ng-template #notDoneBlock>pizza-list preparing!</ng-template>
+
+<!--<p *ngIf="!isDone">pizza-list preparing!</p>-->
+<button (click)="toggle()">Press</button>

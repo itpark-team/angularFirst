@@ -1,1 +1,10 @@
-<p>home works!</p>
+<!--<p [class.text-danger]="isDanger">{{counter}}</p>-->
+<!--<p [class.text-danger]="counter<0">{{counter}}</p>-->
+<!--<p [className]="counterStyle">{{counter}}</p>-->
+
+<p [class.text-danger]="counter<0" [class.text-dark]="counter==0" [class.text-info]="counter>0">{{counter}}</p>
+
+<button (click)="incCounter()">Press me +</button>
+<br/>
+<button (click)="decCounter()">Press me -</button>
+
