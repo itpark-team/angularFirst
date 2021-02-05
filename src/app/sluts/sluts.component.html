@@ -1,7 +1,31 @@
 <p>sluts works!</p>
-<button (click)="loadProducts()
-">Press me</button>
+<button (click)="loadProducts()">Press me</button>
 
 <ul>
   <li *ngFor="let product of products">{{product.id}} | {{product.name}} | {{product.price}}</li>
 </ul>
+
+<div>
+  <label>Name:
+    <input [ngModel]="tempProduct.name" (ngModelChange)="tempProduct.name = $event">
+  </label>
+  <p>value: {{tempProduct.name}}</p>
+
+  <label>Price:
+    <input type="number" [ngModel]="tempProduct.price" (ngModelChange)="tempProduct.price = $event"/>
+  </label>
+  <p>value: {{tempProduct.price}}</p>
+
+  <button (click)="addNewProduct()">Add</button>
+
+  <br>
+
+  <label>Id:
+    <input type="number" [ngModel]="tempProduct.id" (ngModelChange)="tempProduct.id = $event"/>
+  </label>
+  <p>value: {{tempProduct.id}}</p>
+
+  <button (click)="deleteProduct()">Delete</button>
+
+</div>
+

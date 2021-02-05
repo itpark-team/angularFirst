@@ -12,6 +12,7 @@ import {HomeComponent} from './home/home.component';
 
 import {SomeDataService} from './services/some.service';
 import {SlutsComponent} from './sluts/sluts.component';
+import {FormsModule} from '@angular/forms';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
     NgbModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
+    FormsModule,
   ],
   providers: [
     SomeDataService
